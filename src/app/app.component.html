@@ -1,0 +1,35 @@
+<nav>
+    <div class="nav-wrapper">
+            <a routerLink="">Home</a>
+            <a>Nova Lista</a>
+            <a>Sobre</a>
+    </div>
+</nav>
+<br><br><br>
+
+
+    
+<router-outlet></router-outlet>
+
+    <div>
+            <h2> To do List </h2>
+         
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Digite aqui os itens da lista" [(ngModel)]="task.name" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="button" (click)="onClick()">Inserir</button>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li *ngFor="let task of tasks" class="list-group-item">
+                            <span> {{ task.name }}       </span>
+                            <button class="btn btn-primary" type="button" (click)="onEdit(task)">Editar</button>     
+                            <button class="btn btn-primary" type="button" (click)="onDelete(task)">Remover</button>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
